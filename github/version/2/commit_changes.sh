@@ -16,7 +16,7 @@ echo "Node.js and dependencies installed successfully."
 
 # Fetch the correct version file from S3
 VERSION=$4
-curl -o scripts/json_yaml.js "https://raw.githubusercontent.com/Digia-Technology-Private-Limited/digia_public_scripts/refs/heads/main/github/version/$VERSION/json_yaml.js"
+curl -o scripts/json_yaml.js "https://raw.githubusercontent.com/Digia-Technology-Private-Limited/digia_public_scripts_dev/refs/heads/main/github/version/$VERSION/json_yaml.js"
 chmod +x scripts/json_yaml.js
 
 # Run the script with provided arguments
