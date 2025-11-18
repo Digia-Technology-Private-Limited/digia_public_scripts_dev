@@ -6,12 +6,14 @@ const { json } = require('stream/consumers');
 
 
 
+
 const BASE_URL = process.env.BASE_URL;
 const args = process.argv.slice(2); 
 const token = process.env.DIGIA_TOKEN;
 
 let projectId;
 let branchName = args[0];
+
 
 
 function readYamlFile(filePath) {
@@ -86,6 +88,7 @@ async function collectDataFromYamlFiles(folderPath, folderName) {
           
             projectId = jsonData.projectId
           }
+        
 
           dataCollection.push(jsonData);
         }
@@ -105,9 +108,9 @@ async function collectAllData() {
   const folderConfigs = [
     { folderPath: path.join(__dirname, '..', 'project'), folderName: 'project' },
     { folderPath: path.join(__dirname, '..', 'datasources', 'rest'), folderName: 'datasources' },
-    { folderPath: path.join(__dirname, '..', 'datasources', 'environment'), folderName: 'environment' },
+    { folderPath: path.join(__dirname, '..', 'datasources', 'environment'), folderName: 'environments' },
     { folderPath: path.join(__dirname, '..', 'components'), folderName: 'components' },
-    { folderPath: path.join(__dirname, '..', 'design','font-tokens'), folderName: 'typoGraphy' },
+    { folderPath: path.join(__dirname, '..', 'design','font-tokens'), folderName: 'typography' },
     { folderPath: path.join(__dirname, '..', 'design','color-tokens'), folderName: 'themeData' },
     { folderPath: path.join(__dirname, '..', 'design','app-settings'), folderName: 'appSettings' },
     { folderPath: path.join(__dirname, '..', 'design','app-state'), folderName: 'appState' },
